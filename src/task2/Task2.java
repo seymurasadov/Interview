@@ -9,14 +9,14 @@ public class Task2 {
 
 	public static void main(String[] args) {
 
-		int randomNumber1 = ThreadLocalRandom.current().nextInt(5, 6);
+		int randomNumber1 = ThreadLocalRandom.current().nextInt(1, 6);
 
 		for (int i = 0; i < randomNumber1; i++) {
 			
 			new Thread(new NumberGenerator(LocalDateTime.now().plusSeconds(30))).start();
 		}
 
-		int randomNumber2 = ThreadLocalRandom.current().nextInt(5, 6);
+		int randomNumber2 = ThreadLocalRandom.current().nextInt(1, 6);
 		
 		for(int i = 0; i < randomNumber2; i++) {
 			new Thread(new NumberPrinter(LocalDateTime.now().plusSeconds(30))).start();
